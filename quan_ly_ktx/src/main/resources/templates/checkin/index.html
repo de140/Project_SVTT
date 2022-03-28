@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check in</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button class="popup">Check in</button>
+<div class="modal hide">
+    <div class="modal-inner">
+        <div class="modal_header">
+            <p></p>
+            <p>Check in</p>
+            <span><i class="fas fa-times delete"></i></span>
+        </div>
+        <div class="modal_body">
+            <select required class="drop-down">
+                <option value="" disabled selected hidden>Choose room.....................</option>
+                <option value="0">Phòng có điều hoà</option>
+                <option value="1">Phòng không điều hoà</option>
+            </select>
+        </div>
+        <div class="modal_footer">
+            <button class="left-button" >Cancle</button>
+            <button class="right-button" type="submit">Purchase</button>
+        </div>
+    </div>
+</div>
+</body>
+<script src="app.js"></script>
+</html>
+</html>
