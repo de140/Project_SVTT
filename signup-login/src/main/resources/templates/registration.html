@@ -1,0 +1,107 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/style-registration.css">
+
+    <link rel="stylesheet" href="sweetalert2.min.css">
+<!--    <link rel="stylesheet" href="resources/static/package/dist/sweetalert2.min.css">-->
+</head>
+<body>
+
+<!--<div class = "container">-->
+<!--    <div class = "row">-->
+<!--        <div class = "col-md-6 col-md-offset-3">-->
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
+
+            <script th:if="${param.success}">
+<!--                <div class="alert alert-info"> Welcome to FPT Dormitory!!</div>-->
+            Swal.fire(
+              'Welcome!',
+              'Registration completed successfully!',
+              'success'
+            )
+            </script>
+
+            <script th:if="${param.fail}">
+<!--                <div class="alert alert-info"> Welcome to FPT Dormitory!!</div>-->
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Your email or username have been used...',
+<!--                footer: '<a href="">Why do I have this issue?</a>'-->
+                })
+            </script>
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<div class="center">
+
+    <h1>Sign Up</h1>
+
+    <form th:action="@{/registration}" method="post" th:object = "${user}">
+        <div class="form">
+
+            <div class="txt_field">
+                <input  id="firstName" type="text" th:field="*{firstName}" required autofocus="autofocus" />
+                <span></span>
+                <label>First Name</label>
+            </div>
+
+            <div class="txt_field">
+                <input  id="lastName" type="text" th:field="*{lastName}" required autofocus="autofocus" />
+                <span></span>
+                <label>Last Name</label>
+            </div>
+
+            <div class="txt_field">
+                <input id="email" type="text" th:field="*{email}" required autofocus="autofocus" />
+                <span></span>
+                <label>Email</label>
+            </div>
+
+            <div class="txt_field">
+                <input  id="phone" type="number" th:field="*{phone}" required autofocus="autofocus" />
+                <span></span>
+                <label>Phone Number</label>
+            </div>
+
+            <div class="txt_field">
+                <input  id="username" type="text" th:field="*{username}" required autofocus="autofocus" />
+                <span></span>
+                <label>Username</label>
+            </div>
+
+            <div class="txt_field">
+                <input  id="password" type="password" th:field="*{password}" required autofocus="autofocus" />
+                <span></span>
+                <label>Password</label>
+            </div>
+
+        </div>
+
+            <button type="submit" class="btn">Submit</button>
+        <!--        <input type="submit" value="Submit">-->
+        <div class="gg">
+            Or sign up with <a href="">Google.</a>
+        </div>
+
+
+    </form>
+</div>
+
+
+
+
+
+
+
+<!--    <script src="resources/static/package/dist/sweetalert2.min.js"></script>-->
+<!--    <script src="resources/static/package/dist/sweetalert2.all.min.js"></script>-->
+</body>
+</html>
